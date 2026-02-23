@@ -1,0 +1,28 @@
+def mix_colors(color1, color2):
+    """
+    Determines the resulting color when mixing two primary colors.
+    """
+    # Normalize inputs to lowercase
+    c1, c2 = color1.lower(), color2.lower()
+    
+    # Define primary color sets
+    colors = {c1, c2}
+
+    if c1 == c2:
+        return c1
+    elif colors == {"red", "yellow"}:
+        return "orange"
+    elif colors == {"red", "blue"}:
+        return "purple"
+    elif colors == {"blue", "yellow"}:
+        return "green"
+    else:
+        return "unknown mixture"
+
+if __name__ == "__main__":
+    print("Color Mixer")
+    color_a = input("Enter first primary color (red, blue, yellow): ")
+    color_b = input("Enter second primary color (red, blue, yellow): ")
+    
+    result = mix_colors(color_a, color_b)
+    print(f"When you mix {color_a} and {color_b}, you get: {result}")
